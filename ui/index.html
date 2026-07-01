@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Prime Pause</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root" class="hidden">
+    <div class="backdrop"></div>
+
+    <div class="panel">
+      <div class="panel-bg-logo" aria-hidden="true"></div>
+      <div class="topbar">
+        <div class="left">
+          <div class="pill" id="playerInfo">ID: --</div>
+          <div class="pill" id="playerSteam">Steam: --</div>
+        </div>
+
+        <div class="right">
+          <button class="iconbtn" id="btnDiscord" title="Discord">
+            <svg width="16" height="16" viewBox="0 0 240 240" aria-hidden="true">
+              <path d="M104.4 113.2c-5.5 0-10 5-10 11.2S98.9 135 104.4 135s10-5 10-11.2-4.5-11.2-10-11.2zm36.4 0c-5.5 0-10 5-10 11.2s4.5 11.2 10 11.2 10-5 10-11.2-4.5-11.2-10-11.2zm26.3-4.6c-11.2-5.1-22.7-8.7-34.3-11.1.4-.4.8-.9 1.2-1.5-8.5-2.5-17.2-3.9-26-3.9-8.8 0-17.5 1.4-26 3.9.3.6.8 1.1 1.2 1.5-11.6 2.4-23.1 6-34.3 11.1C31.1 85 24 95.8 24 107.3c0 37.6 16.9 69.3 46.8 88.7 3.9 2.2 8.4 1.1 10.6-2.7 0 0 5.9-10.2 10.7-18.6 16.9 5.8 35.1 9 53.9 9s37-3.2 53.9-9c4.8 8.4 10.7 18.6 10.7 18.6 2.3 3.8 6.7 4.9 10.6 2.7C202.7 176.6 219.6 144.9 219.6 107.3c0-11.5-7.1-22.3-18.5-26.7z" fill="currentColor"/>
+            </svg>
+          </button>
+          <button class="iconbtn" id="btnClose" title="Chiudi">
+            <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M18.3 5.7a1 1 0 0 0-1.4 0L12 10.6 7.1 5.7a1 1 0 1 0-1.4 1.4L10.6 12l-4.9 4.9a1 1 0 1 0 1.4 1.4L12 13.4l4.9 4.9a1 1 0 0 0 1.4-1.4L13.4 12l4.9-4.9a1 1 0 0 0 0-1.4Z"
+                    fill="currentColor"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="layout">
+        <div class="grid">
+          <button class="tile hero tile-map" id="tileMap">
+            <div class="tHead">
+              <div class="tMiniIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M15 5.3 9 3 3 5.3V19l6-2.3L15 19l6-2.3V3l-6 2.3ZM9 5.1l6 2.2v11.6l-6-2.2V5.1Zm-4 1L8 5v11.6l-3 1.1V6.1Zm16 10.6-3 1.1V6.2l3-1.1v11.5Z"/>
+                </svg>
+              </div>
+              <div class="tTitle">Mappa</div>
+            </div>
+
+            <div class="tDesc">Apri la mappa</div>
+          </button>
+
+          <button class="tile tile-discord" id="tileDiscord">
+            <div class="tHead">
+              <div class="tMiniIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M20.317 4.369A19.791 19.791 0 0 0 16.595 3C15.72 2.63 14.808 2.39 13.87 2.28 13.157 2.2 12.433 2.18 11.707 2.22c-.724.04-1.444.1-2.158.18-.933.116-1.845.356-2.72.739a19.736 19.736 0 0 0-3.73 1.365C2.672 5.48 1.656 7.372 1.471 9.34.365 10.157 0 11.7 0 13.286c0 4.963 2.632 9.192 6.634 11.672 1.46.534 2.99.8 4.57.8 1.57 0 3.103-.264 4.567-.798 4-2.48 6.635-6.71 6.635-11.674 0-1.582-.368-3.123-1.08-4.36-.047-.09-.103-.18-.16-.265a14.027 14.027 0 0 0-2.625-2.795Zm-11.6 9.1c-.98 0-1.78-.894-1.78-1.99S7.737 9.5 8.717 9.5s1.78.894 1.78 1.99-0.8 1.98-1.78 1.98Zm6.78 0c-.98 0-1.78-.894-1.78-1.99S13.737 9.5 14.717 9.5s1.78.894 1.78 1.99-0.8 1.98-1.78 1.98Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="tTitle">Discord</div>
+            </div>
+
+            <div class="tDesc">Apri il server Discord</div>
+          </button>
+
+          <button class="tile tile-settings" id="tileSettings">
+            <div class="tHead">
+              <div class="tMiniIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M19.4 12.9a7.7 7.7 0 0 0 0-1.8l2-1.6-2-3.4-2.4 1a7.8 7.8 0 0 0-1.6-.9l-.4-2.6H9l-.4 2.6c-.6.2-1.1.5-1.6.9l-2.4-1-2 3.4 2 1.6a7.7 7.7 0 0 0 0 1.8l-2 1.6 2 3.4 2.4-1c.5.4 1 .7 1.6.9l.4 2.6h6l.4-2.6c.6-.2 1.1-.5 1.6-.9l2.4 1 2-3.4-2-1.6ZM12 15.5A3.5 3.5 0 1 1 12 8a3.5 3.5 0 0 1 0 7.5Z"/>
+                </svg>
+              </div>
+              <div class="tTitle">Impostazioni</div>
+            </div>
+
+            <div class="tDesc">Menu GTA</div>
+          </button>
+
+          <button class="tile tile-rules" id="tileRules">
+            <div class="tHead">
+              <div class="tMiniIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 2h9l5 5v15a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Zm8 1.5V8h4.5L14 3.5ZM8 12h8v2H8v-2Zm0 4h8v2H8v-2Zm0-8h6v2H8V8Z"/>
+                </svg>
+              </div>
+              <div class="tTitle">Regolamento</div>
+            </div>
+
+            <div class="tDesc">Apri documento</div>
+          </button>
+
+          <button class="tile tile-support" id="tileSupport">
+            <div class="tHead">
+              <div class="tMiniIcon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2a8 8 0 0 0-8 8v3a3 3 0 0 0 3 3h1v-6H7a5 5 0 0 1 10 0h-1v6h1a3 3 0 0 0 3-3v-3a8 8 0 0 0-8-8Zm-3 18h6v2H9v-2Z"/>
+                </svg>
+              </div>
+              <div class="tTitle">Supporto</div>
+            </div>
+
+            <div class="tDesc">Apri /report</div>
+          </button>
+        </div>
+
+        <div class="profile">
+          <div class="profileLogo" aria-hidden="true"></div>
+          <div class="profileData">
+            <div class="profileRow">
+              <div class="profileLabel">Nome</div>
+              <div class="profileValue" id="profileFirst">--</div>
+            </div>
+            <div class="profileRow">
+              <div class="profileLabel">Cognome</div>
+              <div class="profileValue" id="profileLast">--</div>
+            </div>
+            <div class="profileRow">
+              <div class="profileLabel">Lavoro</div>
+              <div class="profileValue" id="profileJob">--</div>
+            </div>
+            <div class="profileRow">
+              <div class="profileLabel">Contanti</div>
+              <div class="profileValue" id="profileCash">--</div>
+            </div>
+            <div class="profileRow">
+              <div class="profileLabel">Banca</div>
+              <div class="profileValue" id="profileBank">--</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
